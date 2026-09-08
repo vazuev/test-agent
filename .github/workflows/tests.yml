@@ -1,0 +1,19 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build agent image
+        run: docker build -t test-agent:ci .
+
+      - name: Run test suite in Docker
+        run: docker run --rm test-agent:ci python -m pytest -v
