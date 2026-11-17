@@ -78,3 +78,12 @@ docker run --rm test-agent python -m pytest
 GitHub Actions (`.github/workflows/tests.yml`) builds the Docker image and
 runs the test suite inside it on every push to `main` and on every pull
 request.
+
+## Сайт «Нажми на меня» (MYW-18)
+
+Статический одностраничный сайт без зависимостей и сборки: HTML + CSS + немного JavaScript.
+На странице одна кнопка «Нажми на меня»; после нажатия под ней появляется «Добрый вечер»
+(область `aria-live="polite"`, повторные нажатия не дублируют сообщение).
+
+Запуск: откройте `index.html` в браузере двойным кликом (сервер не нужен).
+Файлы: `index.html`, `style.css`, `script.js`. Проверки: `python -m pytest test_index_html.py`.
