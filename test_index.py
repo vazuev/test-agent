@@ -15,4 +15,4 @@ def test_compact():
 
 def test_two_clouds_sun_sky_meadow():
     assert "#87ceeb" in html and "#4caf50" in html and "#ffd700" in html
-    assert html.count("[[") == 1 and html.count("], [") == 1
+    assert "[[90, 70], [220, 110]]" in html
