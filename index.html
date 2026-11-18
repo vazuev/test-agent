@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<canvas id="c" width="400" height="300"></canvas>
+<script>
+const x = document.getElementById("c").getContext("2d");
+const circle = (cx, cy, r, color) => { x.fillStyle = color; x.beginPath(); x.arc(cx, cy, r, 0, 7); x.fill(); };
+x.fillStyle = "#87ceeb";
+x.fillRect(0, 0, 400, 200);
+x.fillStyle = "#4caf50";
+x.fillRect(0, 200, 400, 100);
+circle(320, 60, 35, "#ffd700");
+for (const [cx, cy] of [[90, 70], [220, 110]])
+  for (const [dx, dy, r] of [[0, 0, 20], [22, -8, 25], [48, 0, 20]])
+    circle(cx + dx, cy + dy, r, "#fff");
+</script>
